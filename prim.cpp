@@ -51,21 +51,22 @@ void nhap(){
 
 void prim(int s){
     priority_queue<ii,vii,greater<ii>> q;
-    d[s]=0; q.push({d[s],s});
-    while(!q.empty()){
-        ii top=q.top(); q.pop();
-        int u=top.second,dis=top.first;
+    d[s] = 0; par[s] = s; q.push({d[s], s});
+    while (!q.empty()) {
+        ii  top = q.top(); q.pop();
+        int u = top.second, dis = top.first;
         if (d[u] < dis)
             continue;
-        if (u!=s)
-            mst.push_back({par[u],u,dis});
-        vst[u]=true;
-        for(auto x:adj[u]){
-            int v=x.first,w=x.second;
-            if (d[v]>w && !vst[v])
-                d[v]=w,
-                par[v]=u,
-                q.push({w,v});
+        if (u != s)
+            mst.push_back({par[u], u, dis});
+        vst[u] = true;
+        for (auto x : adj[u]) {
+            int v = x.first, w = x.second;
+            if (d[v] > w && !vst[v]) {
+                d[v] = w;
+                par[v] = u;
+                q.push({w, v});
+            }
         }
     }
     for(auto x:mst)
@@ -73,7 +74,7 @@ void prim(int s){
 }
 
 void solve(){
-    fileI("prim.inp");
+    fileI("test.inp");
     nhap(); 
     prim(1);
 }
