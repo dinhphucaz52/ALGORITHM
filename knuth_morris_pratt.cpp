@@ -34,14 +34,22 @@ void prefix_function(string parttern, string s)
     s = parttern + " " + s;
     for (int i = 1; i < pi.size(); i++)
     {
-        
+        int j = pi[i-1];
+        while (j > 0 && s[i] != s[j])
+            j = pi[j-1];
+        if (s[i] == s[j])
+            j++;
+        pi[i] = j;
     }
+    int res = 0;
+    for (int i = sz(parttern); i < sz(pi); i++)
+        if (pi[i] == sz(parttern))
+            res++;
+    cout << res << endl;
 }
 
 void solve()
 {
-    
-
 }
 
 signed main()
