@@ -23,6 +23,7 @@ Welcome to the repository of various algorithms and data structures implemented 
 - <span style="color: #84d9ba">Trie</span>
 - <span style="color: #84d9ba">Segment Tree (Interval Tree)</span>
 - <span style="color: #84d9ba">Disjoint Set Union (DSU)</span>
+- <span style="color: #84d9ba">Sparse Table</span>
 
 ## Other Algorithms
 - <span style="color: #da3e31">Prefix-Sum on Matrix</span>
